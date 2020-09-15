@@ -1,12 +1,12 @@
 第一步先将创建库，并将库克隆下载 git clone https://xxxx.git
-
 第二步创建好之后,将要上传的文件拉到我们克隆的文件夹
-
 第三步执行（必要）
 git add .    将文件存储到暂存区
-
 第四步添加commit
 git commit-m "first commit"
-
 第五步最重要的一步
 git push -u origin master   （注：此操作目的是把本地仓库push到github上面，此步骤需要你输入帐号和密码）
+
+安装完之后执行 npm install
+vue 运行正常后
+进入thinkphp运行如果出错 请进入thinkphp文件执行  composer update
