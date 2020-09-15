@@ -8,5 +8,5 @@ git add .    将文件存储到暂存区
 第四步添加commit
 git commit-m "first commit"
 
-第五步
+第五步最重要的一步
 git push -u origin master   （注：此操作目的是把本地仓库push到github上面，此步骤需要你输入帐号和密码）
