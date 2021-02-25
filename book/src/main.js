@@ -1,10 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
+import store from './store'
 
-//jq
-import $ from 'jquery'
-//bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min'
+import('bootstrap/dist/js/bootstrap.min')
+import('bootstrap/dist/css/bootstrap.css')
 
-createApp(App).mount('#app')
+createApp(App).use(store).use(router).mount('#app')

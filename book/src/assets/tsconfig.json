@@ -1,10 +1,211 @@
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
+[{
+  img:require('img/abc.jpg'),
+  title:'青春何去何从1',
+  content:'匆匆时间飞去,转眼间我们早都不在年轻',
+  comment:180,
+  data:'2020/5/9',
+  loves:100,
+  types:['青春','匆匆那年','刘欢','爱','鸡你太美'],
+  textContent:' 找一篇关于机器人AI的书。女主为了追男主，凭借超好的记忆力加入了男主的团队，男主团队里每个人都有一个自己的机器人，男主的机器人是个女生，可以陪聊天之类的，很高级。之后女主在帮助下也做了一个自己的机器人叫王子。他们一起去参加比赛。后来男主的队友背叛了男主，卖了一个技术给对手，男主就脱离团队，自己租了个地方继续搞机器人研究，后来男主的机器人被警察看中了，想着帮忙拆炸弹之类的，王子都被女主按上机械翅膀了。记得有一个片段是，女主拿着男主手机问你主人将来的女朋友是谁，手机打开了自拍模式，把男女主都吓了一跳。突然好想看这本书但是找不到了，好急人呦',
+  //所有的评论都在这里,每一条都是一个对象
+  replys:[
+    {
+      userImg:require('img/author.png'),    //评论用户的头像
+      userName:'1.1绑匪在我手上,掏钱',            //评论用户的昵称
+      userDate:'2018/9/18',                 //用户评论的日期
+      userLoves:'550',                      //喜欢这条评论的用户数量
+      //用户发表的文字评论
+      userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+      //用户发表的图片评论
+      userContentImg:[
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg')],
+      //回复这个评论的评论
+      thisRepys:[
+        {
+          userImg:require('img/author.png'),    //评论用户的头像
+          userName:'绑匪在我手上,掏钱',            //评论用户的昵称
+          userDate:'2018/9/18',                 //用户评论的日期
+          userLoves:'550',                      //喜欢这条评论的用户数量
+          //用户发表的文字评论
+          userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+          //用户发表的图片评论
+          userContentImg:[
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg')],
+        }
+      ]
+    },
+    {
+      userImg:require('img/author.png'),    //评论用户的头像
+      userName:'1.2绑匪在我手上,掏钱',            //评论用户的昵称
+      userDate:'2018/9/18',                 //用户评论的日期
+      userLoves:'550',                      //喜欢这条评论的用户数量
+      //用户发表的文字评论
+      userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+      //用户发表的图片评论
+      userContentImg:[
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg')],
+      //回复这个评论的评论
+      thisRepys:[
+        {
+          userImg:require('img/author.png'),    //评论用户的头像
+          userName:'绑匪在我手上,掏钱',            //评论用户的昵称
+          userDate:'2018/9/18',                 //用户评论的日期
+          userLoves:'550',                      //喜欢这条评论的用户数量
+          //用户发表的文字评论
+          userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+          //用户发表的图片评论
+          userContentImg:[
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg')],
+        }
+      ]
+    }
   ]
-}
+},{
+  img:require('img/abc.jpg'),
+  title:'青春何去何从1',
+  content:'匆匆时间飞去,转眼间我们早都不在年轻',
+  comment:180,
+  data:'2020/5/9',
+  loves:100,
+  types:['青春','匆匆那年','刘欢','爱','鸡你太美'],
+  textContent:' 找一篇关于机器人AI的书。女主为了追男主，凭借超好的记忆力加入了男主的团队，男主团队里每个人都有一个自己的机器人，男主的机器人是个女生，可以陪聊天之类的，很高级。之后女主在帮助下也做了一个自己的机器人叫王子。他们一起去参加比赛。后来男主的队友背叛了男主，卖了一个技术给对手，男主就脱离团队，自己租了个地方继续搞机器人研究，后来男主的机器人被警察看中了，想着帮忙拆炸弹之类的，王子都被女主按上机械翅膀了。记得有一个片段是，女主拿着男主手机问你主人将来的女朋友是谁，手机打开了自拍模式，把男女主都吓了一跳。突然好想看这本书但是找不到了，好急人呦',
+  //所有的评论都在这里,每一条都是一个对象
+  replys:[
+    {
+      userImg:require('img/author.png'),    //评论用户的头像
+      userName:'1.1绑匪在我手上,掏钱',            //评论用户的昵称
+      userDate:'2018/9/18',                 //用户评论的日期
+      userLoves:'550',                      //喜欢这条评论的用户数量
+      //用户发表的文字评论
+      userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+      //用户发表的图片评论
+      userContentImg:[
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg')],
+      //回复这个评论的评论
+      thisRepys:[
+        {
+          userImg:require('img/author.png'),    //评论用户的头像
+          userName:'绑匪在我手上,掏钱',            //评论用户的昵称
+          userDate:'2018/9/18',                 //用户评论的日期
+          userLoves:'550',                      //喜欢这条评论的用户数量
+          //用户发表的文字评论
+          userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+          //用户发表的图片评论
+          userContentImg:[
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg')],
+        }
+      ]
+    },
+    {
+      userImg:require('img/author.png'),    //评论用户的头像
+      userName:'1.2绑匪在我手上,掏钱',            //评论用户的昵称
+      userDate:'2018/9/18',                 //用户评论的日期
+      userLoves:'550',                      //喜欢这条评论的用户数量
+      //用户发表的文字评论
+      userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+      //用户发表的图片评论
+      userContentImg:[
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg')],
+      //回复这个评论的评论
+      thisRepys:[
+        {
+          userImg:require('img/author.png'),    //评论用户的头像
+          userName:'绑匪在我手上,掏钱',            //评论用户的昵称
+          userDate:'2018/9/18',                 //用户评论的日期
+          userLoves:'550',                      //喜欢这条评论的用户数量
+          //用户发表的文字评论
+          userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+          //用户发表的图片评论
+          userContentImg:[
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg')],
+        }
+      ]
+    }
+  ]
+},{
+  img:require('img/abc.jpg'),
+  title:'青春何去何从1',
+  content:'匆匆时间飞去,转眼间我们早都不在年轻',
+  comment:180,
+  data:'2020/5/9',
+  loves:100,
+  types:['青春','匆匆那年','刘欢','爱','鸡你太美'],
+  textContent:' 找一篇关于机器人AI的书。女主为了追男主，凭借超好的记忆力加入了男主的团队，男主团队里每个人都有一个自己的机器人，男主的机器人是个女生，可以陪聊天之类的，很高级。之后女主在帮助下也做了一个自己的机器人叫王子。他们一起去参加比赛。后来男主的队友背叛了男主，卖了一个技术给对手，男主就脱离团队，自己租了个地方继续搞机器人研究，后来男主的机器人被警察看中了，想着帮忙拆炸弹之类的，王子都被女主按上机械翅膀了。记得有一个片段是，女主拿着男主手机问你主人将来的女朋友是谁，手机打开了自拍模式，把男女主都吓了一跳。突然好想看这本书但是找不到了，好急人呦',
+  //所有的评论都在这里,每一条都是一个对象
+  replys:[
+    {
+      userImg:require('img/author.png'),    //评论用户的头像
+      userName:'1.1绑匪在我手上,掏钱',            //评论用户的昵称
+      userDate:'2018/9/18',                 //用户评论的日期
+      userLoves:'550',                      //喜欢这条评论的用户数量
+      //用户发表的文字评论
+      userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+      //用户发表的图片评论
+      userContentImg:[
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg')],
+      //回复这个评论的评论
+      thisRepys:[
+        {
+          userImg:require('img/author.png'),    //评论用户的头像
+          userName:'绑匪在我手上,掏钱',            //评论用户的昵称
+          userDate:'2018/9/18',                 //用户评论的日期
+          userLoves:'550',                      //喜欢这条评论的用户数量
+          //用户发表的文字评论
+          userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+          //用户发表的图片评论
+          userContentImg:[
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg')],
+        }
+      ]
+    },
+    {
+      userImg:require('img/author.png'),    //评论用户的头像
+      userName:'1.2绑匪在我手上,掏钱',            //评论用户的昵称
+      userDate:'2018/9/18',                 //用户评论的日期
+      userLoves:'550',                      //喜欢这条评论的用户数量
+      //用户发表的文字评论
+      userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+      //用户发表的图片评论
+      userContentImg:[
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg'),
+        require('img/ces1.jpg')],
+      //回复这个评论的评论
+      thisRepys:[
+        {
+          userImg:require('img/author.png'),    //评论用户的头像
+          userName:'绑匪在我手上,掏钱',            //评论用户的昵称
+          userDate:'2018/9/18',                 //用户评论的日期
+          userLoves:'550',                      //喜欢这条评论的用户数量
+          //用户发表的文字评论
+          userContentText:'我来说个真事,我曾经有个大姐跟我说他的电脑蓝屏了,让我去给他修一下,我把U盘都带上了,准备重装系统,突然发现是这种蓝屏!',
+          //用户发表的图片评论
+          userContentImg:[
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg'),
+            require('img/ces1.jpg')],
+        }
+      ]
+    }
+  ]
+}]

@@ -1,7 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
 function resolve(dir) {
     return path.join(__dirname, dir)
-}
+} 
 module.exports = {
     lintOnSave: true,
     chainWebpack: config => {
@@ -11,9 +12,11 @@ module.exports = {
             .set('assets', resolve('src/assets'))
             .set('components', resolve('src/components'))
             .set('layout', resolve('src/layout'))
-            .set('third', resolve('src/third'))
+            .set('router', resolve('src/router'))
+            .set('htp', resolve('src/require'))
             //public
-            .set('@p', resolve('public'))
-            .set('img', resolve('public/img'))
-    }
+            .set('img', resolve('src/static/app'))
+            .set('hmg',resolve('src/static/userHeads'))
+    },
+    assetsDir: 'static',//静态资源目录名称
 }

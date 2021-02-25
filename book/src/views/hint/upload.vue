@@ -1,57 +1,71 @@
 <template>
+    <div class="index">
         <transition name="fade">
-            <div class="index" v-show="isShow">
-               <div class="indexBC">
-                   <div class="showImg">
-                       <div class="showText">{{state}}</div>
-                       <div class="showContent">{{showImg}}</div>
-                       <div class="spinner"></div>
-                   </div>
-               </div>
+            <div class="index" v-if="isShow">
+                <div class="indexBC">
+                    <div class="showImg">
+                        <span @click="cancel()" class="cancel">
+                            <img src="~img/canceled.png" alt="">
+                        </span>
+                        <div class="showText">{{state}}</div>
+                        <div class="showContent">{{showMSG}}</div>
+                        <div class="spinner">
+                            <div class="double-bounce1"></div>
+                            <div class="double-bounce2"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </transition>
+    </div>
 </template>
 
 <script>
+    //引入加载动画
     export default {
         name: "index",
-        props:{   //父组件传递
-            thisState:{    //状态码
-                type:Number,
-                default:0
-            },
-            thisShowImg:{ //提示信息
-                type:String,
-                default:"操作执行中"
-            },
-            thisShow:{  //是否显示
-                type:Boolean,
-                default:false
-            }
-        },
         data(){
             return {
                 //默认数据
                 state:null,
-                showImg:null,
-                isShow:null
+                showMSG:null,
+                isShow:null,
+                timeOut:false,
             }
         },
         mounted() {
             //初始化默认值
-            this.state = this.thisState==0?"上传中":(this.thisState==1?"上传成功":"上传失败")
-            this.showImg = this.thisShowImg
-            this.isShow = this.thisShow
+            this.state = this.$store.state.AppLoding.state
+            this.showMSG = this.$store.state.AppLoding.showMSG
+            this.isShow =this.$store.state.AppLoding.isShow
+        },
+        methods:{
+            cancel(){
+                // history.back()
+                console.log("取消加载")
+                this.$store.commit("AppLoadOnOFF")
+            }
+        },
+        computed:{
+            State(){
+                return this.$store.state.AppLoding.state
+            },
+            ShowMSG(){
+                return this.$store.state.AppLoding.showMSG
+            },
+            IsShow(){
+                return this.$store.state.AppLoding.isShow
+            }
         },
         watch:{
-            thisState(){
-                this.state = this.thisState==0?"上传中":(this.thisState==1?"上传成功":"上传失败")
+            State(){
+                this.state = this.State
             },
-            thisShowImg(){
-                this.showImg = this.thisShowImg
+            ShowMSG(){
+                this.showMSG = this.ShowMSG
             },
-            thisShow(){
-                this.isShow = this.thisShow
+            IsShow(){
+                this.isShow = this.IsShow
             }
         }
     }
@@ -62,24 +76,24 @@
     .fade-leave-active {
         transition: opacity 0.5s ease;
     }
-
     .fade-enter-from,
     .fade-leave-to {
         opacity: 0;
     }
     .indexBC{
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 3;
-        position: absolute;
-        top: 0;
-        left: 0;
+        z-index: 10;
         background:rgba(0,0,0,0.5)
     }
     .showImg{
+        position: relative;
         width: 60vw;
         background: white;
         z-index: 4;
@@ -91,30 +105,57 @@
     }
     .showContent{
         font-size: 3vw;
+        padding: 1vw 0;
     }
+    .cancel{
+        position: absolute;
+        right: 3vw;
+        top: 3vw;
+        width: 7vw;
+        height: 7vw;
+    }
+    .cancel img{
+        width: 100%;
+    }
+
+    /*加载动画*/
     .spinner {
-        width: 10vw;
-        height: 10vw;
-        background-color: #67CF22;
+        width: 15vw;
+        height: 15vw;
+        position: relative;
         margin: 3vw auto;
-        -webkit-animation: rotateplane-1191044b 1.2s infinite ease-in-out;
-        animation: rotateplane-1191044b 1.2s infinite ease-in-out;
     }
-    @-webkit-keyframes rotateplane {
-        0% { -webkit-transform: perspective(120px) }
-        50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-        100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+    .double-bounce1, .double-bounce2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #67CF22;
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        -webkit-animation: bounce 2.0s infinite ease-in-out;
+        animation: bounce 2.0s infinite ease-in-out;
     }
-    @keyframes rotateplane {
-        0% {
-            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-            -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+
+    .double-bounce2 {
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
+    }
+
+    @-webkit-keyframes bounce {
+        0%, 100% { -webkit-transform: scale(0.0) }
+        50% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: scale(0.0);
+            -webkit-transform: scale(0.0);
         } 50% {
-              transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-              -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-        } 100% {
-                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        }
+              transform: scale(1.0);
+              -webkit-transform: scale(1.0);
+          }
     }
 </style>

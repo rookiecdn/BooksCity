@@ -1,20 +1,15 @@
 <?php
-
 return [
     // 默认使用的数据库连接配置
     'default'         => env('database.driver', 'mysql'),
-
     // 自定义时间查询规则
     'time_query_rule' => [],
-
     // 自动写入时间戳字段
     // true为自动识别类型 false关闭
     // 字符串则明确指定时间字段类型 支持 int timestamp datetime date
     'auto_timestamp'  => true,
-
     // 时间字段取出后的默认时间格式
-    'datetime_format' => 'Y-m-d H:i:s',
-
+    'datetime_format' => 'Y/m/d',
     // 数据库连接配置信息
     'connections'     => [
         'mysql' => [
@@ -36,7 +31,6 @@ return [
             'charset'           => env('database.charset', 'utf8'),
             // 数据库表前缀
             'prefix'            => env('database.prefix', ''),
-
             // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
             'deploy'            => 0,
             // 数据库读写是否分离 主从式有效
@@ -56,7 +50,6 @@ return [
             // 字段缓存路径
             'schema_cache_path' => app()->getRuntimePath() . 'schema' . DIRECTORY_SEPARATOR,
         ],
-
         // 更多的数据库配置信息
     ],
 ];

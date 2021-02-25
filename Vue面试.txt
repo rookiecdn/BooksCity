@@ -1,0 +1,74 @@
+1:  
+基于node环境下安装VueCli 编写代码   代码完成后使用webpack技术进行打包上线
+2：
+create： 组件渲染但是数据未挂载
+mounted :  数据挂在完毕
+3：
+我自己写组件比如 商品容器里面加载商品item
+商品容器:   Shop    商品item  ShopItem    
+4:
+ajax 是一种基于promis的封装 请求成功后通过 .then操作   失败通过 .catch
+最初的promis思想是避免了ajax的回调地狱
+拦截器就是当ajax请求前进行的操作,可以用于判断是否合法 (类似后端语言常用的token判断是否合法  是否是恶意请求)
+5:
+src 是属性,只能接收字符串     :src  == v-bind:src 可以绑定data中的变量
+6：
+key是Vue组件中标识组件的属性   如果组件需要复用,可以将两个组件的key值设置为一样
+7:
+computed 计算属性当页面渲染时自动执行  调用方法同变量  一次执行可以多次调用
+8:
+filet    使用方法   {{name | filterName }}
+9:
+父传子    props
+父组件在子组件标签中绑定   :key = "value"     子组件在props方法中接收   方法有两种 一般用第二种
+props:["key","key2"]
+props:{
+    "key1":{
+     type:Number,
+     default:0
+}
+}
+10：
+插槽的意义就是当我们有很多的类似组件,但是只有指定的区域不同时,为了避免使用重复的代码,可以使用插槽和具名插槽
+调用组件时  将不同的元素放进子组件标签内  
+11:
+路由传参有两种方式 query 和parms
+this.$route.push({ name:xxx,parms:{} })    parms方式
+this.$route.push({ path:xxx,query:{} })      query  方式
+12:
+监听组件传值的变化 
+说一个我写项目中用到的  比如我要监听store中的state的状态的变化 试试更新在页面中
+在组件中使用计算属性获取到指定的state 
+然后使用watch监听   如果监听到有变化 就将值重新赋值给data  实现实时刷新
+13:
+路由懒加载:    import add = ()=>{}    这种方式   我一直用的就是这种
+14:
+路由守卫
+在路由中使用,当路由跳转时执行  获取三个参数 to from  next()     
+还可以在指定路由中写  这样的话只有当前路由跳转时才会执行
+15:
+Vuex就是Vue的状态管理器
+有四个常用的   state  mutilation  action   moduls   
+state           保存数据
+mutilation   修改state
+action   用于异步操作  操作后调用mutilation  修改state
+moduls   可以编写多个模块,包含上方三个属性   但是我不常用
+16:  
+注册指定 我用过但是忘记咋写了
+17：
+Vue.use  顾名思义 就是将指定的元素绑定到Vue组件内  
+例如 element-ui    引用之后需要  Vue.use(element)   这样就可以在任何组件中使用element了
+18:
+双向绑定 
+父组件通过props传递给子组件 
+子组件在mounted方法中获取props给data
+子组件触发函数 修改data,使用this.$emit 发送事件给父组件
+父组件拿到发送的事件  进行修改自己的值
+
+
+
+
+
+
+
+
